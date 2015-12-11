@@ -90,3 +90,15 @@ function parseGuess(guess) {
     }
     return null;
 };
+
+function init() {
+    var fireButton = document.getElementById("fireButton");
+    fireButton.onclick = function(){
+        var guessInput = document.getElementById("guessInput");
+        var guess = guessInput.value;
+        controller.processGuess(guess);
+        guessInput.value = "";
+    }; 
+}
+
+window.onload = init;
