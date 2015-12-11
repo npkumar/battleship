@@ -99,6 +99,14 @@ function init() {
         controller.processGuess(guess);
         guessInput.value = "";
     }; 
-}
+    
+    var guessInput = document.getElementById("guessInput");
+    guessInput.onkeypress = function(e){
+          if (e.keyCode === 13) {
+              fireButton.click();
+              return false; 
+          }
+    };
+};
 
 window.onload = init;
